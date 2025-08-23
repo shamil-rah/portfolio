@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'BeniRegular';
+  src: url('./assets/fonts/BeniBold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CompitaSemibold';
+  src: url('./assets/fonts/Fontspring-DEMO-compita-semibold.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 6rem;
+}
+
+.text-gradient-fill {
+  background: linear-gradient(90deg, #000000 0%, #000000 50%, #D1D5DB 50%, #D1D5DB 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
